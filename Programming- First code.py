@@ -4,7 +4,7 @@
 # In[14]:
 
 
-#room.py
+#room.py #(.py)indicates that it is a seperate file
 class Room: #this is the first class, it is what will represent a room in the hotel and its attributes. 
     #here we are intializing the attributes of the class
     def __init__(self, room_number, room_type, amenities, price_per_night, availability):
@@ -28,7 +28,7 @@ class Room: #this is the first class, it is what will represent a room in the ho
     def __str__(self): #this string is what will return the details of the details of the room, such as if it is available, the type of room, and the room number. 
         return f"Room {self.__room_number} ({self.__room_type}) - {'Available' if self.__availability else 'Booked'}"
 
-#guest.py
+#guest.py #(.py)indicates that it is a seperate file
 class Guest: #this is the second class, it is what represents the personal details of the guest as well as their loyal status. 
     #the attributes of the class is initalized. 
     def __init__(self, guest_id, name, contact_info, loyalty_points):
@@ -49,7 +49,7 @@ class Guest: #this is the second class, it is what represents the personal detai
     def __str__(self): #this is what will return the guest's details such as the name, contact information, and the loyalty points. 
         return f"Guest {self.__name}, Contact: {self.__contact_info}, Points: {self.__loyalty_points}"
 
-#booking.py
+#booking.py #(.py)indicates that it is a seperate file
 class Booking:#this is the third class which is the booking class, and it is responsible for the reservations of the rooms. 
     #the attributes of the class is initalized
     def __init__(self, booking_id, guest: Guest, room: Room, check_in, check_out):
@@ -72,7 +72,7 @@ class Booking:#this is the third class which is the booking class, and it is res
     def __str__(self):#return booking details such as the id, the guest, room number, and status. 
         return f"Booking {self.__booking_id}: {self.__guest} - Room {self.__room.get_room_number()} ({self.__status})"
 
-#payment.py
+#payment.py #(.py)indicates that it is a seperate file
 class Payment:#this is the fourth class which is responsible for processing a payment and generating a invoice. 
         #the attributes of the class is initalized
     def __init__(self, payment_id, booking: Booking, payment_method, nightly_rate, additional_charges, discounts):
@@ -94,7 +94,7 @@ class Payment:#this is the fourth class which is responsible for processing a pa
     def __str__(self):
         return self.generate_invoice()#this returns the invoice
 
-#loyalty_program.py
+#loyalty_program.py #(.py)indicates that it is a seperate file
 class LoyaltyProgram:#this is the fifth class which handles the loyalty program which allows the guests to earn and redeem points. 
     #the attributes of the class is initalized
     def __init__(self, guest: Guest, points_earned):
@@ -105,7 +105,7 @@ class LoyaltyProgram:#this is the fifth class which handles the loyalty program 
     def redeem_points(self) -> str:#this processed the points that were redemeed
         return "Points redeemed."#this returns a message that says points redeemed
 
-#guest_services.py
+#guest_services.py #(.py)indicates that it is a seperate file
 class GuestServices:#this is the sixth class that is responsible for service related to the uest such as transportation and programs.     
         #the attributes of the class is initalized
     def __init__(self, service_id, guest: Guest, service_type):
@@ -117,7 +117,7 @@ class GuestServices:#this is the sixth class that is responsible for service rel
     def request_service(self, service_type: str):#here the message is sent to request for service
         return f"{service_type} requested."#returns the message for the service request
 
-#feedback.py
+#feedback.py #(.py)indicates that it is a seperate file
 class Feedback:#this is the seventh class which represents the feedback guests give after a stay at the hotel
      #the attributes of the class is initalized
     def __init__(self, feedback_id, guest: Guest, rating, comments):
@@ -129,11 +129,6 @@ class Feedback:#this is the seventh class which represents the feedback guests g
     
     def __str__(self):#here the feedback from the gues is returned which includes the guest id, the rating, and comments. 
         return f"Feedback from {self.__guest}: {self.__rating}/5 - {self.__comments}"
-    
-
-
-
-# In[ ]:
 
 
 
